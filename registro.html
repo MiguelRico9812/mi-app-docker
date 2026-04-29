@@ -1,57 +1,87 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Registro</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-      background: linear-gradient(135deg, #ff7e5f, #feb47b);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+<meta charset="UTF-8">
+<title>Registro</title>
 
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      text-align: center;
-      width: 300px;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-    input {
-      width: 90%;
-      padding: 10px;
-      margin: 10px 0;
-    }
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  animation: fadeIn 1s ease;
+}
 
-    button {
-      padding: 10px 20px;
-      background: #ff7e5f;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-  </style>
+input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 20px;
+  background: #ff758c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ff5277;
+}
+
+a {
+  display: block;
+  margin-top: 15px;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1;}
+}
+</style>
+
 </head>
 <body>
 
-  <div class="card">
-    <h2>Registro</h2>
+<div class="card">
+  <h2>Registro</h2>
 
-    <input type="text" placeholder="Nombre">
-    <input type="email" placeholder="Correo">
+  <input type="text" id="nombre" placeholder="Nombre">
+  <input type="email" id="correo" placeholder="Correo">
 
-    <button onclick="alert('Registro exitoso ✅')">
-      Registrarse
-    </button>
+  <button onclick="registrar()">Registrarse</button>
 
-    <br><br>
-    <a href="index.html">Volver</a>
-  </div>
+  <a href="index.html">Volver</a>
+</div>
+
+<script>
+function registrar() {
+  let nombre = document.getElementById("nombre").value;
+
+  if(nombre === "") {
+    alert("Ingresa tu nombre");
+  } else {
+    alert("Registro exitoso ✅");
+  }
+}
+</script>
 
 </body>
 </html>
